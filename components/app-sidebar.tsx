@@ -34,9 +34,11 @@ export function AppSidebar({ user }: { user: User | undefined }) {
               }}
               className="flex flex-row gap-3 items-center"
             >
-              <span className="text-lg font-semibold px-2 hover:bg-muted rounded-md cursor-pointer">
-                Chatbot
-              </span>
+              <img
+                src="/images/logo.webp"
+                alt="Logo Growth System"
+                className="h-8 w-auto px-2 cursor-pointer hover:bg-muted rounded-md"
+              />
             </Link>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -65,3 +67,4 @@ export function AppSidebar({ user }: { user: User | undefined }) {
     </Sidebar>
   );
 }
+
