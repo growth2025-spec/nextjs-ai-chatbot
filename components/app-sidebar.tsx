@@ -36,7 +36,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
               className="flex flex-row gap-3 items-center"
             >
               <Image
-                src="/images/logo.webp"
+                src="/images/logogrowt.png"
                 alt="Logo Growth System"
                 width={100}
                 height={32}
