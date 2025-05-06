@@ -70,3 +70,21 @@ export default async function RootLayout({
       <body className="antialiased">
         <ThemeProvider
           attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SessionProvider>
+            <div className="flex h-screen">
+              <AppSidebar user={undefined} /> {/* 👈 Sidebar con logo aquí */}
+              <main className="flex-1 overflow-auto">
+                {children}
+              </main>
+            </div>
+            <Toaster position="top-center" />
+          </SessionProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}
