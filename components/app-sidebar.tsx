@@ -2,6 +2,7 @@
 
 import type { User } from 'next-auth';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // ✅ Importación necesaria para el logo
 
 import { PlusIcon } from '@/components/icons';
 import { SidebarHistory } from '@/components/sidebar-history';
@@ -34,10 +35,12 @@ export function AppSidebar({ user }: { user: User | undefined }) {
               }}
               className="flex flex-row gap-3 items-center"
             >
-              <img
+              <Image
                 src="/images/logo.webp"
                 alt="Logo Growth System"
-                className="h-8 w-auto px-2 cursor-pointer hover:bg-muted rounded-md"
+                width={100}
+                height={32}
+                className="px-2 cursor-pointer hover:bg-muted rounded-md"
               />
             </Link>
             <Tooltip>
@@ -67,4 +70,5 @@ export function AppSidebar({ user }: { user: User | undefined }) {
     </Sidebar>
   );
 }
+
 
