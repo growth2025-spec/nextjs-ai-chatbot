@@ -2,9 +2,10 @@ import { Toaster } from 'sonner';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
-import { SessionProvider } from 'next-auth/react';
-import { AppSidebar } from '@/components/app-sidebar'; // 🟡 Sidebar importado
+
 import './globals.css';
+import { SessionProvider } from 'next-auth/react';
+import { AppSidebar } from '@/components/app-sidebar'; // 👈 Importamos el sidebar
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chat.vercel.ai'),
@@ -77,9 +78,7 @@ export default async function RootLayout({
           <SessionProvider>
             <div className="flex h-screen">
               <AppSidebar user={undefined} />
-              <main className="flex-1 overflow-auto">
-                {children}
-              </main>
+              <main className="flex-1 overflow-auto">{children}</main>
             </div>
           </SessionProvider>
         </ThemeProvider>
